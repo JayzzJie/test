@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+<script src="js/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<table>
+				<tr>
+					<td>产品名称（英文）：</td>
+					<td><input type="text" id="name"/></td>
+				</tr>
+				<tr>
+					<td>产品CAS号：</td>
+					<td><input type="text" id="cas"/></textarea></td>
+				</tr>
+				<tr>
+					<td>产品简介：</td>
+					<td><textarea style="height: 100px;"  id="detail"></textarea></td>
+				</tr>
+				<tr>
+					<td>产品类型：</td>
+					<td><input type="text" id="type"/></td>
+				</tr>
+				
+				<input type="hidden" id="image"/>
+				<tr>
+					<td>产品图片：</td>
+					<td>
+						<form id="file_form" action="product/uploadImage.do" enctype="multipart/form-data" method="post">
+				   	     	<input type="file" id="file" name="file">
+				    	</form>
+				    </td>
+				</tr>
+				
+				<tr>
+					<td>产品初始化浏览次数：</td>
+					<td><input type="text" id="viewTimes"/></td>
+				</tr>
+				<tr>
+					<td><div><input type="button" value="确认录入" id="submit_id"/></div></td>
+					<td></td>
+				</tr>
+			</table>
+</body>
+<script type="text/javascript">
+$(function(){	//加载完body调用该函数
+	$("#submit_id").click(addProduct);
+});
+var path="http://localhost:8080/sxytbio";
+function addProduct(){
+	var name = $('#name').val();
+	var cas = $('#cas').val();
+	var detail = $('#detail').val();
+	var type = $('#type').val();
+	var viewTimes = $('#viewTimes').val();
+	var obj = document.getElementById("file");
+	var len = obj.files.length;
+	var image = "";
+	for (var i = 0; i < len; i++) {
+		image = obj.files[i].name;
+	}
+	if(name.trim()==""){
+		alert("产品名不能为空！");
+	}
+	if(cas.trim()==""){
+		alert("cas不能为空！");
+	}
+	if(detail.trim()==""){
+		alert("产品详情不能为空！");
+	}
+	if(type.trim()==""){
+		alert("产品类型不能为空！");
+	}
+	if(viewTimes.trim()==""){
+		alert("产品初始浏览次数不能为空！");
+	}
+	if(image.trim()==""){
+		alert("必须上传图片");
+	}
+	var data = {
+			"name":name, 
+			"cas":cas,
+			"detail":detail,
+			"type":type,
+			"viewTimes":viewTimes,
+			"image":image
+				};
+	$.ajax({
+		url:path+"/product/addProduct.do",
+		type:"post",
+		data:data,
+		dataType:"json",
+		success:function(result){
+			if (result.state == 0) {
+				var form = document.getElementById('file_form');
+				form.submit();
+				alert("添加成功");
+			}
+		},
+		error:function(){
+			alert("失败");
+		}
+	});
+}
+</script>
+</html>

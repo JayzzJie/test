@@ -13,6 +13,7 @@
 <!---js--->
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/product.js"></script>
 <!---js--->
 <!--JS for animate-->
 	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
@@ -30,10 +31,15 @@
 <body>
 	<!---header--->
 		<div class="header-section">
-			<div class="container">
-				<div class="head-bottom" style="padding: 0px;">
-					<div class="logo  wow fadeInDownBig animated animated" data-wow-delay="0.4s">
-						<h1><a href="index.html"><img alt="logo" src="images/logo.jpg"></a></h1>
+			<div class="container" style="padding-left: 0px;margin-left: 30px;padding-right: 0px;margin-right: 0px;">
+				<div class="" style="padding: 0px;">
+					<div class="" data-wow-delay="0.4s">
+						<h4>
+							<img alt="logo" src="images/logo.jpg">
+							<input type="text"  style="width: 300px;height: 40px;margin-left:200px;margin-top:15px;margin-bottom: 15px;" placeholder=" product name / cas No." 
+							id="search_text" >
+							<input type="button" id="search_id" value="search" style="height: 40px;margin-top:15px;">
+						</h4>
 					</div>
 				</div>
 			</div>
@@ -73,78 +79,18 @@
 	<div class="content">
 		<div class="about-section" style="padding-top: 20px;">
 			<div class="container">
-				<!-- <h2>Product</h2> -->
-				<div class="about-grids">
-					<div class="col-md-4 about-grid wow fadeInRight animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/Resveratrol.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Resveratrol</h4>
-						<p>Resveratrol is a naturally occurring phytoalexin produced by some higher plants in response to injury or fungal infection. Resveratrol may also have alexin-like activity for humans.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInDownBig animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/Rhodiola.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Rhodiola Rosea Extract</h4>
-						<p>Organic rhodiola rosea extract is the root of an arctic plant that is first and foremost an adaptogen - a substance that increases resistance to physical and mental stress. It has a normalizing effect.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInLeft animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/Olive.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Olive Leaf Extract</h4>
-						<p>Olive is oleaceae osmanthus fragrans lam evergreen trees, is a world famous woody oil plants and fruit with tree species, varieties have higher edible value, rich in high quality edible vegetable oil.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInRight animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/product/Aloe.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Aloe Vera Extract</h4>
-						<p>Aloe Vera Extract has been used for centuries as a topical remedy for minor burns, cuts, and other skin irritations. It also promotes the healing of minor burns and small wounds.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInDownBig animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/product/CopperPeptide.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Copper Peptide</h4>
-						<p>Copper Peptide is needed to maintain bodily functions of trace elements (2 mg daily demand), many functions and complex role in cells is an element of various enzymes needed.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInLeft animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/product/Cycloastragenol.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Cycloastragenol</h4>
-						<p>Cycloastragenol has a similar chemical structure to that of the Astragaloside IV molecule, but it is smaller and significantly more bioavailable, enabling lower doses to be taken.</p>
-					</div>
-					<div class="clearfix"></div>
+				<!-- <a href="www.baidu.com"><h3>Products List View</h3></a> -->
+				<div class="about-grids" id="product_list_area">
+				
 					
-					<div class="col-md-4 about-grid wow fadeInRight animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/product/Pramiracetam.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Pramiracetam</h4>
-						<p>Pramiracetam is a nootropic drug derived from piracetam, and is more potent (i.e. lower dosage is used). It belongs to the racetam family of nootropics.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInDownBig animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/product/Pterostilbene.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Pterostilbene</h4>
-						<p>Pterostilbene is a stilbenoid chemically related to resveratrol. In plants, it serves a defensive phytoalexin role. The possible biological effects of pterostilbene are being examined in basic research involving laboratory models of several disorders, including age-related cognitive decline.</p>
-					</div>
-					<div class="col-md-4 about-grid wow fadeInLeft animated" data-wow-delay=".5s">
-						<div class="about-img">
-							<img src="images/product/Tianeptine.jpg" class="img-responsive" alt=""/>
-						</div>
-						<h4>Tianeptine </h4>
-						<p>Tianeptine, also known as stablon, is a drug primarily used in the treatment of Major depressive disorder. It has also been used to treat irritable bowel syndrome and asthma. </p>
-					</div>
 					<div class="clearfix"></div>
-					
 				</div>
 			</div>
 		</div>
+		<div style="text-align: right; margin: 5px; padding-right: 50px;">
+			<a href="javascript:void(0);" id="view_more_id"><h3>View More...</h3></a>
+		</div>
+		
 			<div class="team">
 				<div class="container">
 				<h3>Our Team Members</h3>
